@@ -1,0 +1,64 @@
+package com.first;
+/*
+*msfata programminghelp
+*/
+@SuppressWarnings({"unchecked","rawtypes"})
+public class GenericExample<T> {
+	private T name;
+	private T age;
+	private T dob;
+
+	public T getAge() {
+		return age;
+	}
+
+	public void setAge(T age) {
+		this.age = age;
+	}
+
+	public T getDob() {
+		return dob;
+	}
+
+	public void setDob(T dob) {
+		this.dob = dob;
+	}
+
+	public T getName() {
+		return name;
+	}
+
+	public void setName(T name) {
+		this.name = name;
+	}
+
+	public static <T> void printArray(T[] inputArray) {
+		// Display array elements
+		for (T element : inputArray) {
+			System.out.printf("%s ", element);
+		}
+		System.out.println();
+	}
+
+	
+
+	public static void main(String[] args) {
+		// testing object variable
+		GenericExample girl = new GenericExample();
+		GenericExample boy = new GenericExample();
+
+		// setting variable girl
+		girl.setName("Jamila Fata");
+		girl.setAge(34);
+		girl.setDob("15/04/1980");
+
+		// setting variable girl
+		boy.setName("Shafiq Fata");
+		boy.setAge(40);
+		boy.setDob("01/04/1980");
+
+		// printing variables
+		printArray(new Object[] { girl.getName(), girl.getAge(), girl.getDob() });
+		printArray(new Object[] { boy.getName(), boy.getAge(), boy.getDob() });
+	}
+}
